@@ -44,4 +44,19 @@
     </dependencies>
 
 
+<!--    <build>-->
+<!--        <plugins>-->
+<!--            &lt;!&ndash; Is used to compile the source of your project &ndash;&gt;-->
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-compiler-plugin</artifactId>-->
+<!--                <version>${maven-compiler-plugin.version}</version>-->
+<!--                <configuration>-->
+<!--                    &lt;!&ndash;https://winterbe.com/posts/2018/08/29/migrate-maven-projects-to-java-11-jigsaw/&ndash;&gt;-->
+<!--                    &lt;!&ndash;New version add the <release> to replace the <source> and <target> parameters&ndash;&gt;-->
+<!--                    <release>11</release>-->
+<!--                </configuration>-->
+<!--            </plugin>-->
+<!--        </plugins>-->
+<!--    </build>-->
 </project>
