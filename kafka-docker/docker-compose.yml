@@ -1,5 +1,3 @@
----
-# Guideline: https://kafka.apache.org/quickstart-docker
 version: '2'
 services:
   zookeeper:
