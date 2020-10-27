@@ -1,3 +1,0 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
-  org.tnmk.common.kafka.consumer.KafkaGlobalListenerContainerProperties\
-  ,org.tnmk.common.kafka.producer.KafkaGlobalProducerProperties

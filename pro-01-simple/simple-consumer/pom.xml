@@ -3,19 +3,19 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <groupId>org.tnmk.skeleton</groupId>
+        <groupId>org.tnmk.practice.spring-kafka</groupId>
         <artifactId>pro-01-simple</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.tnmk.skeleton.pro-01-simple</groupId>
+    <groupId>org.tnmk.practice.spring-kafka.pro-01-simple</groupId>
     <artifactId>simple-consumer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
     <dependencies>
         <dependency>
-            <groupId>org.tnmk.skeleton.pro-01-simple</groupId>
+            <groupId>org.tnmk.practice.spring-kafka.pro-01-simple</groupId>
             <artifactId>simple-common</artifactId>
             <version>${project.version}</version>
         </dependency>

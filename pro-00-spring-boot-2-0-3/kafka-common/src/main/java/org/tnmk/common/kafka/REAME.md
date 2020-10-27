@@ -1,1 +1,0 @@
-This package provides support classes so that you can configure the consumer & producer more easily.

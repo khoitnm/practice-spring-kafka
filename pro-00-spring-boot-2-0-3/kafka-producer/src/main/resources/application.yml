@@ -1,7 +1,0 @@
-server.port: ${port:8080}
-kafka-global-producer:
-  bootstrap-servers: localhost:9092
-
-app:
-  topic:
-    example: topic.01

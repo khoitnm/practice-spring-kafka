@@ -1,1 +1,0 @@
-SampleApp: This package provides an example how to use the org.tnmk.practicespringkafka.common.kafka package.
