@@ -3,9 +3,7 @@ server:
 
 spring:
   kafka:
-    # 192.168.1.2:9092 --> error: I'm getting “Topic not present in metadata after 60000 ms” message on some computers
-    # localhost: 9092 --> error: "no lead broker"
-    # should use ${KAFKA_ADVERTISED_HOST_NAME}
+    # Note: the first time publishing the message, it may show "no lead broker"? But it will be fine the next times
     bootstrap-servers: localhost:9092
     key-serializer: org.apache.kafka.common.serialization.StringSerializer
     value-serializer: org.apache.kafka.common.serialization.StringSerializer
