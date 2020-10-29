@@ -11,6 +11,7 @@
 
     <modules>
         <module>pro-01-simple</module>
+        <module>pro-02-transaction</module>
     </modules>
 
     <properties>
