@@ -4,7 +4,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
+import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Service;
+import org.springframework.util.concurrent.ListenableFuture;
+
+import java.util.concurrent.ExecutionException;
 
 @Service
 public class PersonProducer {
@@ -16,9 +20,15 @@ public class PersonProducer {
 
     private String topic = TopicConstants.PERSON;
 
-    public void send(String data){
-        logger.info("[KAFKA PUBLISHER] sending data='{}' to topic='{}'", data, topic);
-
-        kafkaTemplate.send(topic, data);
+    public void send(String messageBody){
+        logger.info("[KAFKA PUBLISHER] sending data='{}' to topic='{}'", messageBody, topic);
+        String messageKey = "sample"+System.nanoTime();
+        ListenableFuture<SendResult<String, String>> listenableFuture = kafkaTemplate.send(topic, messageKey, messageBody);
+        try {
+            SendResult<String, String> sendResult = listenableFuture.get();
+            logger.info("[KAFKA PUBLISHER] send result: {}", sendResult.toString());
+        } catch (InterruptedException | ExecutionException e) {
+            throw new RuntimeException("[KAFKA PUBLISHER] Error: "+e.getMessage(), e);
+        }
     }
 }
