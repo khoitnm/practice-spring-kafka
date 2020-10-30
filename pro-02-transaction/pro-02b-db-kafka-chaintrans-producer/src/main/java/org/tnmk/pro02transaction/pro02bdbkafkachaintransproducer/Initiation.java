@@ -5,7 +5,7 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 import org.tnmk.pro02transaction.pro02bdbkafkachaintransproducer.producer.ProducerWithTransactionalAnnotation;
-import org.tnmk.pro02transaction.pro02bdbkafkachaintransproducer.storageservice.MessageAssertionService;
+import org.tnmk.pro02transaction.pro02bdbkafkachaintransproducer.dbstorage.MessageAssertionService;
 
 @Service
 public class Initiation {

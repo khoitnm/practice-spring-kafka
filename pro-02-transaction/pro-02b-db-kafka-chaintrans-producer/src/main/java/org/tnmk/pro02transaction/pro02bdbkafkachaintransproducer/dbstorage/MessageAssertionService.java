@@ -1,4 +1,4 @@
-package org.tnmk.pro02transaction.pro02bdbkafkachaintransproducer.storageservice;
+package org.tnmk.pro02transaction.pro02bdbkafkachaintransproducer.dbstorage;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,9 +16,12 @@ public class MessageAssertionService {
 
     public boolean assertExistMessage(String messageBody){
         List<Message> messages = messageRepository.findByMessageBody(messageBody);
-        boolean result = !messages.isEmpty();
-
-        logger.info("Assert existing message {}: {}", messageBody, result);
-        return result;
+        boolean isExist = !messages.isEmpty();
+        if (isExist){
+            logger.info("Assert message in DB was committed: '{}'", messageBody);
+        }else{
+            logger.info("Assert message in DB was rollback: '{}'", messageBody);
+        }
+        return isExist;
     }
 }

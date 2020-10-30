@@ -9,8 +9,8 @@ import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.concurrent.ListenableFuture;
-import org.tnmk.pro02transaction.pro02bdbkafkachaintransproducer.storageservice.Message;
-import org.tnmk.pro02transaction.pro02bdbkafkachaintransproducer.storageservice.MessageRepository;
+import org.tnmk.pro02transaction.pro02bdbkafkachaintransproducer.dbstorage.Message;
+import org.tnmk.pro02transaction.pro02bdbkafkachaintransproducer.dbstorage.MessageRepository;
 
 @Service
 public class ProducerWithTransactionalAnnotation {

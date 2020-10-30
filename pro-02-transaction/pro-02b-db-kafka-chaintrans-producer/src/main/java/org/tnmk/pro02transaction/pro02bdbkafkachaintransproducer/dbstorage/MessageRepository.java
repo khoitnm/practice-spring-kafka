@@ -1,4 +1,4 @@
-package org.tnmk.pro02transaction.pro02bdbkafkachaintransproducer.storageservice;
+package org.tnmk.pro02transaction.pro02bdbkafkachaintransproducer.dbstorage;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
