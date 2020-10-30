@@ -1,4 +1,4 @@
-package org.tnmk.pro02transaction.sample.person;
+package org.tnmk.pro02transaction.transactionconsumer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
