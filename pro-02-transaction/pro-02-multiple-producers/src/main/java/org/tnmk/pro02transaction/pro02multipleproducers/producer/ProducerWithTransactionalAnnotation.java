@@ -18,22 +18,21 @@ public class ProducerWithTransactionalAnnotation {
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
 
-    @Transactional(transactionManager = "kafkaTransactionManager")
-    public void sendSuccessfully(String messageBody) {
-        send(kafkaTemplate, TopicConstants.TOPIC01, messageBody);
-        send(kafkaTemplate, TopicConstants.TOPIC02, messageBody);
+    @Transactional(transactionManager = "standaloneKafkaTransactionManager")
+    public void sendMultiTopicsSuccessfully(String messageBody) {
+        sendAndWriteLog(kafkaTemplate, TopicConstants.TOPIC01, messageBody);
+        sendAndWriteLog(kafkaTemplate, TopicConstants.TOPIC02, messageBody);
     }
 
-    @Transactional(transactionManager = "kafkaTransactionManager")
-    public void sendFailAndRollback(String messageBody) {
-        send(kafkaTemplate, TopicConstants.TOPIC01, messageBody);
-        send(kafkaTemplate, TopicConstants.TOPIC02, messageBody);
+    @Transactional(transactionManager = "standaloneKafkaTransactionManager")
+    public void sendMultiTopicsFailAndRollback(String messageBody) {
+        sendAndWriteLog(kafkaTemplate, TopicConstants.TOPIC01, messageBody);
+        sendAndWriteLog(kafkaTemplate, TopicConstants.TOPIC02, messageBody);
         throw new RuntimeException(String.format("%s message won't be sent to topic01 & topic02", messageBody));
     }
 
-    private ListenableFuture<SendResult<String, String>> send(KafkaOperations kafkaOperations, String topic, String messageBody) {
+    private ListenableFuture<SendResult<String, String>> sendAndWriteLog(KafkaOperations kafkaOperations, String topic, String messageBody) {
         logger.info("[KAFKA PUBLISHER] sending data='{}' to topic='{}'...", messageBody, topic);
-        String messageKey = "sample" + System.nanoTime();
-        return kafkaOperations.send(topic, messageKey, messageBody);
+        return kafkaOperations.send(topic, messageBody);
     }
 }

@@ -19,9 +19,9 @@ public class Initiation {
     @EventListener(ApplicationReadyEvent.class)
     public void init() {
         String successMessage = "Success_" + System.nanoTime();
-        producerWithTransactionalAnnotation.sendSuccessfully(successMessage);
+        producerWithLocalTransaction.sendMultiTopicsSuccessfully(successMessage);
 
         String failMessage = "Fail_" + System.nanoTime();
-        producerWithTransactionalAnnotation.sendFailAndRollback(failMessage);
+        producerWithLocalTransaction.sendMultiTopicsFailAndRollback(failMessage);
     }
 }
