@@ -10,7 +10,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.tnmk.practice.spring-kafka.pro-02-transaction</groupId>
-    <artifactId>transaction-producer</artifactId>
+    <artifactId>pro-02-multiple-producers</artifactId>
     <version>0.0.1-SNAPSHOT</version>
 
 

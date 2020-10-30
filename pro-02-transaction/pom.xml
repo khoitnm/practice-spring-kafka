@@ -12,7 +12,7 @@
 
     <modules>
         <module>transaction-consumer</module>
-        <module>transaction-producer</module>
+        <module>pro-02-multiple-producers</module>
     </modules>
 
     <properties>
