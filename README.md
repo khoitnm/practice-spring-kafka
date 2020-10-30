@@ -22,13 +22,13 @@ Solution:
     Add this to docker-compose: KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
     
 # References
-Kafka security SASL: https://github.com/layonez/kafka-example
-JSON message format and some application.yaml configs for Producers & Consumers: https://dzone.com/articles/spring-boot-and-kafka-configuration-tuning
-Transaction:
-    - https://www.confluent.io/blog/transactions-apache-kafka/?utm_medium=sem&utm_source=google&utm_campaign=ch.sem_br.nonbrand_tp.prs_tgt.dsa_mt.dsa_rgn.namer_lng.eng_dv.all&utm_term=&creative=&device=c&placement=&gclid=CjwKCAjw0On8BRAgEiwAincsHEGyvj9qvoZtrDhcacK11Fx7OMJ-Wt_cUUYSeULq6-s9TDo1puMV6BoCURoQAvD_BwE 
-    - https://github.com/milofelipe/spring-kafka-transactions
-    - https://www.confluent.io/blog/spring-for-apache-kafka-deep-dive-part-1-error-handling-message-conversion-transaction-support/
-    - ChainTransaction with DB (example code): https://docs.spring.io/spring-kafka/reference/html/#ex-jdbc-sync
-Error Handler with Error Topic: https://www.confluent.io/blog/spring-for-apache-kafka-deep-dive-part-1-error-handling-message-conversion-transaction-support/  
-Kafka testing: https://dzone.com/articles/a-quick-and-practical-example-of-kafka-testing
+- Kafka security SASL: https://github.com/layonez/kafka-example
+- JSON message format and some application.yaml configs for Producers & Consumers: https://dzone.com/articles/spring-boot-and-kafka-configuration-tuning
+- Transaction:
+  - https://www.confluent.io/blog/transactions-apache-kafka/?utm_medium=sem&utm_source=google&utm_campaign=ch.sem_br.nonbrand_tp.prs_tgt.dsa_mt.dsa_rgn.namer_lng.eng_dv.all&utm_term=&creative=&device=c&placement=&gclid=CjwKCAjw0On8BRAgEiwAincsHEGyvj9qvoZtrDhcacK11Fx7OMJ-Wt_cUUYSeULq6-s9TDo1puMV6BoCURoQAvD_BwE 
+  - https://github.com/milofelipe/spring-kafka-transactions
+  - https://www.confluent.io/blog/spring-for-apache-kafka-deep-dive-part-1-error-handling-message-conversion-transaction-support/
+  - ChainTransaction with DB (example code): https://docs.spring.io/spring-kafka/reference/html/#ex-jdbc-sync
+- Error Handler with Error Topic: https://www.confluent.io/blog/spring-for-apache-kafka-deep-dive-part-1-error-handling-message-conversion-transaction-support/  
+- Kafka testing: https://dzone.com/articles/a-quick-and-practical-example-of-kafka-testing
   

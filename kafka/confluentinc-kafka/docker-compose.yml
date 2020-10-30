@@ -32,7 +32,7 @@ services:
 
       # https://github.com/confluentinc/cp-docker-images/issues/852
       # https://github.com/confluentinc/demo-scene/blob/master/ksqldb-twitter/docker-compose.yml
-      # Adding this will fix problem ""org.springframework.transaction.CannotCreateTransactionException: Could not create Kafka transaction; nested exception is org.apache.kafka.common.errors.TimeoutException: Timeout expired after 60000milliseconds while awaiting InitProducerId"
+      # Adding this will fix problem "org.springframework.transaction.CannotCreateTransactionException: Could not create Kafka transaction; nested exception is org.apache.kafka.common.errors.TimeoutException: Timeout expired after 60000milliseconds while awaiting InitProducerId"
       KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
       # If missing this, it will cause infinite messages "Discovered transaction coordinator localhost:9092 (id: 1 rack: null)"
       KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
