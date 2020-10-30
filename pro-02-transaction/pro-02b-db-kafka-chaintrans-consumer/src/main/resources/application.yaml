@@ -1,0 +1,14 @@
+server:
+  port: 8081
+
+spring:
+  kafka:
+    bootstrap-servers: localhost:9092
+    consumer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+#      enable-auto-commit: false
+      properties:
+        #When using spring-kafka 1.3.x or later and a kafka-clients version that supports transactions (0.11 or later), any KafkaTemplate operations performed in a @KafkaListener method will participate in the transaction, and the listener container will send the offsets to the transaction before committing it. Recognize that we also set the isolation level for the consumers to not have visibility into uncommitted records.
+        isolation.level: read_committed
+

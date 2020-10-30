@@ -13,6 +13,8 @@
     <modules>
         <module>pro-02a-multi-topics-producer</module>
         <module>pro-02a-multi-topics-consumer</module>
+        <module>pro-02b-db-kafka-chaintrans-producer</module>
+        <module>pro-02b-db-kafka-chaintrans-consumer</module>
     </modules>
 
     <properties>
