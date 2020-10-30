@@ -22,13 +22,26 @@ public class Initiation {
 
     @EventListener(ApplicationReadyEvent.class)
     public void init() {
-        String successMessage = "Success_" + System.nanoTime();
-        producerWithPureApacheKafka.sendMultiTopicsSuccessfully(successMessage);
-        producerWithLocalTransaction.sendMultiTopicsSuccessfully(successMessage);
-        producerWithTransactionalAnnotation.sendMultiTopicsSuccessfully(successMessage);
+        sendSuccessMessages();
+        sendFailMessages();
+    }
 
-        String failMessage = "Fail_" + System.nanoTime();
+    private void sendSuccessMessages() {
+        String successMessage = "PureApacheKafka_Success_" + System.nanoTime();
+        producerWithPureApacheKafka.sendMultiTopicsSuccessfully(successMessage);
+
+        successMessage = "LocalTransaction_Success_" + System.nanoTime();
+        producerWithLocalTransaction.sendMultiTopicsSuccessfully(successMessage);
+
+        successMessage = "TransactionalAnnotation_Success_" + System.nanoTime();
+        producerWithTransactionalAnnotation.sendMultiTopicsSuccessfully(successMessage);
+    }
+
+    private void sendFailMessages() {
+        String failMessage = "LocalTransaction_Fail_" + System.nanoTime();
         producerWithLocalTransaction.sendMultiTopicsFailAndRollback(failMessage);
+
+        failMessage = "TransactionalAnnotation_Fail_" + System.nanoTime();
         producerWithTransactionalAnnotation.sendMultiTopicsFailAndRollback(failMessage);
     }
 }

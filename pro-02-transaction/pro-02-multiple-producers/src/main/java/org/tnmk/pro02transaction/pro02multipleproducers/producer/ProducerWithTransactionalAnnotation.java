@@ -18,15 +18,13 @@ public class ProducerWithTransactionalAnnotation {
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
 
-//        @Transactional(transactionManager = "standaloneKafkaTransactionManager")
-    @Transactional(transactionManager = "kafkaTransactionManager")
+    @Transactional//(transactionManager = "kafkaTransactionManager")
     public void sendMultiTopicsSuccessfully(String messageBody) {
         sendAndWriteLog(kafkaTemplate, TopicConstants.TOPIC01, messageBody);
         sendAndWriteLog(kafkaTemplate, TopicConstants.TOPIC02, messageBody);
     }
 
-//        @Transactional(transactionManager = "standaloneKafkaTransactionManager")
-    @Transactional(transactionManager = "kafkaTransactionManager")
+    @Transactional//(transactionManager = "kafkaTransactionManager")
     public void sendMultiTopicsFailAndRollback(String messageBody) {
         sendAndWriteLog(kafkaTemplate, TopicConstants.TOPIC01, messageBody);
         sendAndWriteLog(kafkaTemplate, TopicConstants.TOPIC02, messageBody);
