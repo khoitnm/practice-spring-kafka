@@ -23,10 +23,12 @@ public class Initiation {
     @EventListener(ApplicationReadyEvent.class)
     public void init() {
         String successMessage = "Success_" + System.nanoTime();
-//        producerWithPureApacheKafka.sendMultiTopicsSuccessfully(successMessage);
+        producerWithPureApacheKafka.sendMultiTopicsSuccessfully(successMessage);
+        producerWithLocalTransaction.sendMultiTopicsSuccessfully(successMessage);
+        producerWithTransactionalAnnotation.sendMultiTopicsSuccessfully(successMessage);
 
         String failMessage = "Fail_" + System.nanoTime();
-//        producerWithTransactionalAnnotation.sendMultiTopicsFailAndRollback(failMessage);
         producerWithLocalTransaction.sendMultiTopicsFailAndRollback(failMessage);
+        producerWithTransactionalAnnotation.sendMultiTopicsFailAndRollback(failMessage);
     }
 }

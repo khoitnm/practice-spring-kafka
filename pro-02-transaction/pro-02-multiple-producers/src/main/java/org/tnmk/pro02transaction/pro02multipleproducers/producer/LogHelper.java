@@ -12,8 +12,12 @@ public class LogHelper {
 
     public static void logResult(ListenableFuture<SendResult<String, String>> listenableFuture) {
         try {
-            SendResult<String, String> sendResult = listenableFuture.get();
-            logger.info("[KAFKA PUBLISHER] sent success " + sendResult.toString());
+            String result = null;
+            if (listenableFuture != null) {
+                SendResult<String, String> sendResult = listenableFuture.get();
+                result = String.valueOf(sendResult);
+            }
+            logger.info("[KAFKA PUBLISHER] sent success {}", result);
         } catch (InterruptedException | ExecutionException e) {
             throw new RuntimeException("[KAFKA PUBLISHER] sent fail " + e.getMessage(), e);
         }

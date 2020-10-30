@@ -13,4 +13,6 @@ spring:
       # If I disable this, I could get error when using transaction in KafkaTemplate.executeInTransaction() "Caused by: java.lang.IllegalArgumentException: The 'ProducerFactory' must support transactions"
       transaction-id-prefix: tx-
       properties:
+        # Not sure why do we need it yet?
+#        enable.idempotence: true
         transaction.timeout.ms: 5000

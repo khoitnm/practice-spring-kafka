@@ -17,8 +17,10 @@ Solution: ???
     - Therefore, we need to add this into docker-compose: KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
     
 ## 3. Kafka transaction in a producer: infinite messages about "Discovered transaction coordinator localhost:9092 (id: 1 rack: null)"
-After fixing issue 2, we get infinite messages "Discovered transaction coordinator localhost:9092 (id: 1 rack: null)"    
-
+After fixing issue 2, we get infinite messages "Discovered transaction coordinator localhost:9092 (id: 1 rack: null)"
+Solution:
+    Add this to docker-compose: KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+    
 # References
 Kafka security SASL: https://github.com/layonez/kafka-example
 JSON message format and some application.yaml configs for Producers & Consumers: https://dzone.com/articles/spring-boot-and-kafka-configuration-tuning
