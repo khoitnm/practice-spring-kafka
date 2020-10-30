@@ -1,4 +1,4 @@
-package org.tnmk.pro02transaction.sample.person.producer;
+package org.tnmk.pro02transaction.transactionconsumer.consumer;
 
 public class TopicConstants {
     public static final String TOPIC01 = "topic01";

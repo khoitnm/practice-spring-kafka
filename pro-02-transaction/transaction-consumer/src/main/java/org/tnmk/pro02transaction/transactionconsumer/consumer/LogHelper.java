@@ -1,4 +1,4 @@
-package org.tnmk.pro02transaction.sample.person.consumer;
+package org.tnmk.pro02transaction.transactionconsumer.consumer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -13,4 +13,5 @@ public class LogHelper {
         Long offset = (Long) headers.get(KafkaHeaders.OFFSET);
         logger.info("[KAFKA LISTENER], topic={}, offset={}, message: '{}', headers: {}", topic,offset, message, headers.entrySet());
     }
+
 }
