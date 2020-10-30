@@ -15,3 +15,7 @@ spring:
       properties:
 #        enable.idempotence: true
         transaction.timeout.ms: 5000
+
+  h2:
+    console:
+      enabled: true

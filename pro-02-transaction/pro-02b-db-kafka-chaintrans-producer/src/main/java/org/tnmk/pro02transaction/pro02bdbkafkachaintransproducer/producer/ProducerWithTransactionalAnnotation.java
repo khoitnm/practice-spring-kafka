@@ -9,6 +9,8 @@ import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.concurrent.ListenableFuture;
+import org.tnmk.pro02transaction.pro02bdbkafkachaintransproducer.storageservice.Message;
+import org.tnmk.pro02transaction.pro02bdbkafkachaintransproducer.storageservice.MessageRepository;
 
 @Service
 public class ProducerWithTransactionalAnnotation {
@@ -18,16 +20,19 @@ public class ProducerWithTransactionalAnnotation {
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
 
-    @Transactional//(transactionManager = "kafkaTransactionManager")
+    @Autowired
+    private MessageRepository messageRepository;
+
+    @Transactional
     public void sendMultiTopicsSuccessfully(String messageBody) {
         sendAndWriteLog(kafkaTemplate, TopicConstants.TOPIC01, messageBody);
-        sendAndWriteLog(kafkaTemplate, TopicConstants.TOPIC02, messageBody);
+        messageRepository.save(new Message(messageBody));
     }
 
-    @Transactional//(transactionManager = "kafkaTransactionManager")
+    @Transactional
     public void sendMultiTopicsFailAndRollback(String messageBody) {
+        messageRepository.save(new Message(messageBody));
         sendAndWriteLog(kafkaTemplate, TopicConstants.TOPIC01, messageBody);
-        sendAndWriteLog(kafkaTemplate, TopicConstants.TOPIC02, messageBody);
         throw new RuntimeException(String.format("%s message won't be sent to topic01 & topic02", messageBody));
     }
 
