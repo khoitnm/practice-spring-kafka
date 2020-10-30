@@ -1,6 +1,11 @@
-# Guideline
-https://www.confluent.io/blog/apache-kafka-spring-boot-application
+# Trouble Shoot
+## Problem with JsonConverter in Consumer:
+In application.yml, you may think about using `value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer`
+However, it's very inconvenient because the class object of the message used by the provider must exist in consumer.
+<br/>
+So, another way is using `value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer` combine with `StringJsonMessageConverter` bean.
+Then it can convert just any JSON String into any class.
+<br/>
+Please view detail code in `application.yml` and `KafkaJsonConverterConfig`
 
-#Trouble shoot
-Error when running `mvn clean install`: `invalid release target 11`
-Solution: recheck JAVA_HOME is pointing to jdk 11 (may need to restart IntelliJ/computer after updating) 
+Reference link: https://stackoverflow.com/questions/50478267/classnotfoundexception-with-kafka-consumer/50489352#50489352
