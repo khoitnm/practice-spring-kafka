@@ -17,15 +17,15 @@ import java.util.UUID;
 //@Configuration
 public class KafkaTransactionConfig {
 
-//    @Bean
-//    KafkaTemplate<String, String> kafkaTemplate(ProducerFactory producerFactory) {
-//        return new KafkaTemplate(producerFactory);
-//    }
-//
-//    @Bean
-//    KafkaTransactionManager<String, String> kafkaTransactionManager(ProducerFactory producerFactory) {
-//        return new KafkaTransactionManager<>(producerFactory);
-//    }
+    @Bean
+    KafkaTemplate<String, String> kafkaTemplate(ProducerFactory producerFactory) {
+        return new KafkaTemplate(producerFactory);
+    }
+
+    @Bean
+    KafkaTransactionManager<String, String> kafkaTransactionManager(ProducerFactory producerFactory) {
+        return new KafkaTransactionManager<>(producerFactory);
+    }
 
     @Bean("standaloneKafkaTemplate")
     @Primary

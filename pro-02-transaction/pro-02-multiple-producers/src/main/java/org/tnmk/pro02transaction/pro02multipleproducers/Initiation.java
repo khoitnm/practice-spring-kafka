@@ -5,6 +5,7 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
 import org.tnmk.pro02transaction.pro02multipleproducers.producer.ProducerWithLocalTransaction;
+import org.tnmk.pro02transaction.pro02multipleproducers.producer.ProducerWithPureApacheKafka;
 import org.tnmk.pro02transaction.pro02multipleproducers.producer.ProducerWithTransactionalAnnotation;
 
 @Service
@@ -16,12 +17,16 @@ public class Initiation {
     @Autowired
     private ProducerWithTransactionalAnnotation producerWithTransactionalAnnotation;
 
+    @Autowired
+    private ProducerWithPureApacheKafka producerWithPureApacheKafka;
+
     @EventListener(ApplicationReadyEvent.class)
     public void init() {
         String successMessage = "Success_" + System.nanoTime();
-        producerWithLocalTransaction.sendMultiTopicsSuccessfully(successMessage);
+//        producerWithPureApacheKafka.sendMultiTopicsSuccessfully(successMessage);
 
         String failMessage = "Fail_" + System.nanoTime();
+//        producerWithTransactionalAnnotation.sendMultiTopicsFailAndRollback(failMessage);
         producerWithLocalTransaction.sendMultiTopicsFailAndRollback(failMessage);
     }
 }
