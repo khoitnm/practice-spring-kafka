@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.tnmk.practice.spring-kafka</groupId>
-    <artifactId>practice-spring-kafka</artifactId>
+    <artifactId>pro-04-stream</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-    <name>practice-spring-kafka</name>
 
     <modules>
-        <module>pro-01-simple</module>
-        <module>pro-02-transaction</module>
-        <module>pro-03-json-message</module>
-        <module>pro-04-stream</module>
+        <module>pro-04a-stream-statestore</module>
     </modules>
 
     <properties>
@@ -24,6 +22,4 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
 
-
 </project>
-
