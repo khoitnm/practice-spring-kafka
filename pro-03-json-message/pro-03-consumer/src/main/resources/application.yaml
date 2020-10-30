@@ -4,6 +4,8 @@ server:
 spring:
   kafka:
     bootstrap-servers: localhost:9092
-    key-serializer: org.apache.kafka.common.serialization.StringSerializer
-    value-serializer: org.apache.kafka.common.serialization.StringSerializer
+    consumer:
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      # Please read comment in KafkaJsonConverterConfig
+      value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
 

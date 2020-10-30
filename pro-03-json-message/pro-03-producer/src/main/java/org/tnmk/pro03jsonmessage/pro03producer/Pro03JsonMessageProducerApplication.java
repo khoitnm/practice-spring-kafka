@@ -1,4 +1,4 @@
-package org.tnmk.pro03jsonmessage.sample.person;
+package org.tnmk.pro03jsonmessage.pro03producer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

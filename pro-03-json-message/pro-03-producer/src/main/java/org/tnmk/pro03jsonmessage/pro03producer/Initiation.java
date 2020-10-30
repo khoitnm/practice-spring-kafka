@@ -1,11 +1,11 @@
-package org.tnmk.pro03jsonmessage.sample.person;
+package org.tnmk.pro03jsonmessage.pro03producer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
-import org.tnmk.pro03jsonmessage.sample.person.producer.PersonProducer;
-
+import org.tnmk.pro03jsonmessage.pro03producer.model.Person;
+import org.tnmk.pro03jsonmessage.pro03producer.producer.PersonProducer;
 @Service
 public class Initiation {
 
@@ -14,11 +14,7 @@ public class Initiation {
 
     @EventListener(ApplicationReadyEvent.class)
     public void init() {
-//        Person person = Person.newBuilder()
-//            .setNickName("PersonV1_"+System.nanoTime())
-//            .setRealName("RealName_"+System.nanoTime())
-//            .build();
-        String person = "PersonV1_" + System.nanoTime();
+        Person person = new Person(1L, "Name_"+System.nanoTime());
         personProducer.send(person);
     }
 }

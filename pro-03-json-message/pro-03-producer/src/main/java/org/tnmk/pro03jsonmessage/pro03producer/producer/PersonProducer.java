@@ -1,4 +1,4 @@
-package org.tnmk.pro03jsonmessage.sample.person.producer;
+package org.tnmk.pro03jsonmessage.pro03producer.producer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -7,6 +7,7 @@ import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.kafka.support.SendResult;
 import org.springframework.stereotype.Service;
 import org.springframework.util.concurrent.ListenableFuture;
+import org.tnmk.pro03jsonmessage.pro03producer.model.Person;
 
 import java.util.concurrent.ExecutionException;
 
@@ -16,16 +17,16 @@ public class PersonProducer {
     private static final Logger logger = LoggerFactory.getLogger(PersonProducer.class);
 
     @Autowired
-    private KafkaTemplate<String, String> kafkaTemplate;
+    private KafkaTemplate<String, Person> kafkaTemplate;
 
     private String topic = TopicConstants.PERSON;
 
-    public void send(String messageBody){
+    public void send(Person messageBody){
         logger.info("[KAFKA PUBLISHER] sending data='{}' to topic='{}'", messageBody, topic);
         String messageKey = "sample"+System.nanoTime();
-        ListenableFuture<SendResult<String, String>> listenableFuture = kafkaTemplate.send(topic, messageKey, messageBody);
+        ListenableFuture<SendResult<String, Person>> listenableFuture = kafkaTemplate.send(topic, messageKey, messageBody);
         try {
-            SendResult<String, String> sendResult = listenableFuture.get();
+            SendResult<String, Person> sendResult = listenableFuture.get();
             logger.info("[KAFKA PUBLISHER] send result: {}", sendResult.toString());
         } catch (InterruptedException | ExecutionException e) {
             throw new RuntimeException("[KAFKA PUBLISHER] Error: "+e.getMessage(), e);
