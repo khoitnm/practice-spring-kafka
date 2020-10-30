@@ -10,8 +10,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.tnmk.practice.spring-kafka.pro-02-transaction</groupId>
-    <artifactId>transaction-consumer</artifactId>
+    <artifactId>pro-02a-multi-topics-producer</artifactId>
     <version>0.0.1-SNAPSHOT</version>
+
 
     <dependencies>
         <dependency>
@@ -22,6 +23,7 @@
             <groupId>org.springframework.kafka</groupId>
             <artifactId>spring-kafka</artifactId>
         </dependency>
+
 
         <!--Test-->
         <dependency>
@@ -34,7 +36,6 @@
             <artifactId>spring-kafka-test</artifactId>
             <scope>test</scope>
         </dependency>
-
     </dependencies>
 
 </project>

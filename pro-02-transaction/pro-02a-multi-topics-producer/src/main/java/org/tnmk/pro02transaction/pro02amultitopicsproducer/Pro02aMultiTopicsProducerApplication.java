@@ -1,4 +1,4 @@
-package org.tnmk.pro02transaction.pro02multipleproducers;
+package org.tnmk.pro02transaction.pro02amultitopicsproducer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,9 +8,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 //@EnableTransactionManagement
 @SpringBootApplication
-public class Pro02MultipleProducersApplication {
+public class Pro02aMultiTopicsProducerApplication {
 
     public static void main(final String[] args) {
-        SpringApplication.run(Pro02MultipleProducersApplication.class, args);
+        SpringApplication.run(Pro02aMultiTopicsProducerApplication.class, args);
     }
 }

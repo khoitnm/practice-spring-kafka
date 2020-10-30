@@ -1,12 +1,12 @@
-package org.tnmk.pro02transaction.pro02multipleproducers;
+package org.tnmk.pro02transaction.pro02amultitopicsproducer;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 import org.springframework.stereotype.Service;
-import org.tnmk.pro02transaction.pro02multipleproducers.producer.ProducerWithLocalTransaction;
-import org.tnmk.pro02transaction.pro02multipleproducers.producer.ProducerWithPureApacheKafka;
-import org.tnmk.pro02transaction.pro02multipleproducers.producer.ProducerWithTransactionalAnnotation;
+import org.tnmk.pro02transaction.pro02amultitopicsproducer.producer.ProducerWithLocalTransaction;
+import org.tnmk.pro02transaction.pro02amultitopicsproducer.producer.ProducerWithPureApacheKafka;
+import org.tnmk.pro02transaction.pro02amultitopicsproducer.producer.ProducerWithTransactionalAnnotation;
 
 @Service
 public class Initiation {

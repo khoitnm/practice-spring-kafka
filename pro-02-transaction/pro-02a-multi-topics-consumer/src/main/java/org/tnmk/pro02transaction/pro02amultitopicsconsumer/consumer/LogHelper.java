@@ -1,4 +1,4 @@
-package org.tnmk.pro02transaction.transactionconsumer.consumer;
+package org.tnmk.pro02transaction.pro02amultitopicsconsumer.consumer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

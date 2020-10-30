@@ -11,8 +11,8 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>transaction-consumer</module>
-        <module>pro-02-multiple-producers</module>
+        <module>pro-02a-multi-topics-producer</module>
+        <module>pro-02a-multi-topics-consumer</module>
     </modules>
 
     <properties>

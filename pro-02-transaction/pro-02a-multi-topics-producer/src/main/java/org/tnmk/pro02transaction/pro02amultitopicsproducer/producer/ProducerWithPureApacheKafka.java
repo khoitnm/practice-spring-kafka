@@ -1,4 +1,4 @@
-package org.tnmk.pro02transaction.pro02multipleproducers.producer;
+package org.tnmk.pro02transaction.pro02amultitopicsproducer.producer;
 
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerRecord;
