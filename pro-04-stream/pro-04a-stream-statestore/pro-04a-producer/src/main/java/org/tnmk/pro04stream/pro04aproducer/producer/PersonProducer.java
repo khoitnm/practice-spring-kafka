@@ -19,7 +19,7 @@ public class PersonProducer {
     @Autowired
     private KafkaTemplate<String, Person> kafkaTemplate;
 
-    private String topic = TopicConstants.PERSON;
+    private String topic = TopicConstants.PERSON01;
 
     public void send(Person messageBody){
         logger.info("[KAFKA PUBLISHER] sending data='{}' to topic='{}'", messageBody, topic);

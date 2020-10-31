@@ -1,11 +1,26 @@
 package org.tnmk.pro04stream.pro04aconsumer.config;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.springframework.kafka.support.serializer.JsonSerde;
+import org.apache.kafka.common.serialization.Deserializer;
+import org.apache.kafka.common.serialization.Serde;
+import org.apache.kafka.common.serialization.Serializer;
+import org.apache.kafka.connect.json.JsonSerializer;
+import org.springframework.kafka.support.serializer.JsonDeserializer;
 
-public class GenericJsonSerde extends JsonSerde {
+public class GenericJsonSerde implements Serde {
 
-    public GenericJsonSerde() {
-        super(new ObjectMapper());
+    public final Class<?> targetClass;
+
+    public GenericJsonSerde(Class<?> targetClass) {
+        this.targetClass = targetClass;
+    }
+
+    @Override
+    public Serializer serializer() {
+        return new JsonSerializer();
+    }
+
+    @Override
+    public Deserializer deserializer() {
+        return new JsonDeserializer(targetClass);
     }
 }
