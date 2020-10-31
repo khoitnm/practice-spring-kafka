@@ -8,4 +8,12 @@ spring:
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
       # Please read comment in KafkaJsonConverterConfig
       value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
+    streams:
+      applicationId: "pro04a"
+
+      # View all of supported properties in StreamsConfig
+      # Cannot config default.value.serde like this at this moment, have to config it manually: https://github.com/quarkusio/quarkus/issues/3202
+      #properties:
+      #  default.value.serde: org.apache.kafka.common.serialization.Serdes.ByteArraySerde
+
 

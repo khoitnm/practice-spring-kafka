@@ -23,6 +23,7 @@ Solution:
     
 # References
 - Kafka Design (has a lot of interesting information): https://kafka.apache.org/documentation/#design
+- Spring Kafka References: https://docs.spring.io/spring-kafka/reference/html/
 - Kafka security SASL: https://github.com/layonez/kafka-example
 - JSON message format and some application.yaml configs for Producers & Consumers: https://dzone.com/articles/spring-boot-and-kafka-configuration-tuning
 - Transaction:

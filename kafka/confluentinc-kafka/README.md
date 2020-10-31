@@ -9,6 +9,12 @@ Sourcecode: https://github.com/rmoff/kafka-listeners/blob/master/python/docker-c
 `bash stop.sh`
 
 # Other list of commandline to work with Kafka Docker
-- https://docs.confluent.io/current/quickstart/cos-docker-quickstart.html <-- This document has some new command lines guideline, but not much.
-- https://docs.confluent.io/current/quickstart/ce-docker-quickstart.html <-- This document has some new command lines guideline, but not much.
-- https://docs.confluent.io/3.1.1/cp-docker-images/docs/quickstart.html <-- This document has many useful command lines, but it's in the old version. We can still learn from it, though!
+- This document has some new command lines guideline, but not much.<br/>
+  https://docs.confluent.io/current/quickstart/cos-docker-quickstart.html 
+- This document has some new command lines guideline, but not much.<br/>
+  https://docs.confluent.io/current/quickstart/ce-docker-quickstart.html 
+- This document has many useful command lines, but it's in the old version. We can still learn from it, though!<br/>
+  https://docs.confluent.io/3.1.1/cp-docker-images/docs/quickstart.html
+- Some command lines for kafka-console-consumer and kafka-console-producer with many properties:<br/>
+  https://kafka.apache.org/26/documentation/streams/quickstart 
+

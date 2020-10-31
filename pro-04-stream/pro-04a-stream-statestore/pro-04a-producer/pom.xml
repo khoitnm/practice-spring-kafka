@@ -24,11 +24,23 @@
             <artifactId>spring-kafka</artifactId>
         </dependency>
 
+        <!-- Kafka Stream -->
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka-streams</artifactId>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.apache.kafka</groupId>-->
+<!--            <artifactId>kafka-clients</artifactId>-->
+<!--            <version>1.0.0</version>-->
+<!--        </dependency>-->
+
         <!-- json message support -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
         </dependency>
+
 
         <!--Test-->
         <dependency>
