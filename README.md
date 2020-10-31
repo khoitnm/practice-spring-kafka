@@ -22,6 +22,7 @@ Solution:
     Add this to docker-compose: KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
     
 # References
+- Kafka Design (has a lot of interesting information): https://kafka.apache.org/documentation/#design
 - Kafka security SASL: https://github.com/layonez/kafka-example
 - JSON message format and some application.yaml configs for Producers & Consumers: https://dzone.com/articles/spring-boot-and-kafka-configuration-tuning
 - Transaction:
