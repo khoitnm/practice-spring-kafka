@@ -20,6 +20,11 @@ public class KafkaStreamPerson01ToPerson02Config {
         return new ObjectMapper();
     }
 
+    /**
+     * When doing this, the stream will be started and closed automatically when the application is started and closed, respectively.
+     * @param kStreamBuilder
+     * @return
+     */
     @Bean
     public KStream<String, String> kStream(StreamsBuilder kStreamBuilder) {
         KStream<String, String> stream = kStreamBuilder.stream(TopicConstants.PERSON01);
