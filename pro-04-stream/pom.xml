@@ -11,7 +11,7 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>pro-04a-stream-statestore</module>
+        <module>pro-04a-forward-to-another-topic</module>
     </modules>
 
     <properties>
