@@ -16,8 +16,9 @@ spring:
         guarantee: exactly_once
 
       # View all of supported properties in StreamsConfig
-      # Cannot config default.value.serde like this at this moment, have to config it manually: https://github.com/quarkusio/quarkus/issues/3202
-      #properties:
-      #  default.value.serde: org.apache.kafka.common.serialization.Serdes.ByteArraySerde
+      properties:
+        default.key.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+        default.value.serde: org.apache.kafka.common.serialization.Serdes$StringSerde
+        default.timestamp.extractor: org.apache.kafka.streams.processor.WallclockTimestampExtractor
 
 
