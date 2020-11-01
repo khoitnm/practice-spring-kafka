@@ -7,9 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * Spring boot application to test Kafka integration.
  */
 @SpringBootApplication
-public class Pro04StreamProducerApplication {
+public class Pro04aProducerApplication {
 
     public static void main(final String[] args) {
-        SpringApplication.run(Pro04StreamProducerApplication.class, args);
+        SpringApplication.run(Pro04aProducerApplication.class, args);
     }
 }

@@ -24,15 +24,10 @@
             <artifactId>spring-kafka</artifactId>
         </dependency>
 
-        <!-- Kafka Stream -->
-        <dependency>
-            <groupId>org.apache.kafka</groupId>
-            <artifactId>kafka-streams</artifactId>
-        </dependency>
+<!--        &lt;!&ndash; Kafka Stream &ndash;&gt;-->
 <!--        <dependency>-->
 <!--            <groupId>org.apache.kafka</groupId>-->
-<!--            <artifactId>kafka-clients</artifactId>-->
-<!--            <version>1.0.0</version>-->
+<!--            <artifactId>kafka-streams</artifactId>-->
 <!--        </dependency>-->
 
         <!-- json message support -->
