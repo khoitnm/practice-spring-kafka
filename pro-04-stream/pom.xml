@@ -12,6 +12,7 @@
 
     <modules>
         <module>pro-04a-forward-to-another-topic</module>
+        <module>pro-04b-publish-to-statestore</module>
     </modules>
 
     <properties>
