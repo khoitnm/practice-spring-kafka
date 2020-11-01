@@ -10,6 +10,10 @@ spring:
       value-deserializer: org.apache.kafka.common.serialization.ByteArrayDeserializer
     streams:
       applicationId: "pro04a"
+      processing:
+        # This flag is used to support exactly-one message by avoid duplication messages which consumed and sent by a stream due to failure of broker or stream.
+        # Please view more in https://www.confluent.io/blog/exactly-once-semantics-are-possible-heres-how-apache-kafka-does-it/
+        guarantee: exactly_once
 
       # View all of supported properties in StreamsConfig
       # Cannot config default.value.serde like this at this moment, have to config it manually: https://github.com/quarkusio/quarkus/issues/3202
