@@ -13,5 +13,7 @@ spring:
       # If I disable this, I could get error when using transaction in KafkaTemplate.executeInTransaction() "Caused by: java.lang.IllegalArgumentException: The 'ProducerFactory' must support transactions"
       transaction-id-prefix: tx-
       properties:
-#        enable.idempotence: true
+        # This flag is used to support exactly-one message by avoid duplication messages sent by a producer due to failure of broker or producer.
+        # Please view more in https://www.confluent.io/blog/exactly-once-semantics-are-possible-heres-how-apache-kafka-does-it/
+        enable.idempotence: true
         transaction.timeout.ms: 5000
