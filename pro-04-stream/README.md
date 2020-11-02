@@ -9,6 +9,8 @@ This is just one simple example of additional complexity from Spring Cloud Kafka
 https://stackoverflow.com/questions/60440415/unable-to-set-groupid-and-clientid-when-using-spring-cloud-stream-kafka-binder 
 
 # References
+- Topic, Stream, Table (Kafka Table) - a very good tutorial: https://www.michael-noll.com/blog/2018/04/05/of-stream-and-tables-in-kafka-and-stream-processing-part1/
+- Kafka Sink to sync KTable to DB Table (need to use Avro formatter, not Json Formatter): https://stackoverflow.com/questions/54029106/what-is-the-simplest-way-to-sync-a-kafka-ktable-to-a-sql-database
 - Apache Kafka Stream:
     - https://kafka.apache.org/26/documentation/streams/core-concepts
     - https://kafka.apache.org/26/documentation/streams/architecture 
