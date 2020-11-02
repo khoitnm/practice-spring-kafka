@@ -11,6 +11,7 @@ https://stackoverflow.com/questions/60440415/unable-to-set-groupid-and-clientid-
 # References
 - Topic, Stream, Table (Kafka Table) - a very good tutorial: https://www.michael-noll.com/blog/2018/04/05/of-stream-and-tables-in-kafka-and-stream-processing-part1/
 - Kafka Sink to sync KTable to DB Table (need to use Avro formatter, not Json Formatter): https://stackoverflow.com/questions/54029106/what-is-the-simplest-way-to-sync-a-kafka-ktable-to-a-sql-database
+- Using KTable Materialized with a chance that we may even don't need DB Table? https://jaceklaskowski.gitbooks.io/mastering-kafka-streams/content/kafka-streams-Materialized.html
 - Apache Kafka Stream:
     - https://kafka.apache.org/26/documentation/streams/core-concepts
     - https://kafka.apache.org/26/documentation/streams/architecture 
