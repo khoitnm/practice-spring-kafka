@@ -14,6 +14,7 @@ import org.tnmk.pro04stream.pro04bpublishtostatestore.pro04bconsumer.consumer.mo
 
 import java.io.IOException;
 
+//TODO Not finished yet.
 @Service
 public class KafkaStreamPerson01ToPerson02Config {
 
